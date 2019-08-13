@@ -19,6 +19,9 @@ public class UserService {
         //进行加密
         BCryptPasswordEncoder encoder =new BCryptPasswordEncoder();
         sysUser.setPassword(encoder.encode(MD5Util.encode(sysUser.getRawPassword().trim())));
+
+
+
         userDao.create(sysUser);
     return sysUser;
     }
